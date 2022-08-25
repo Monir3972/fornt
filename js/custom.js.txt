@@ -1,0 +1,30 @@
+//For tooltip
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+//For popover
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+//For scrollspy
+$('body').scrollspy({ target : '#main-menu' })
+
+//For scrolltop
+$(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+});
